@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CounterJs</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            vertical-align: baseline;
+            list-style: none;
+        }
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-color: aliceblue;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+        #display {
+            font-size: 100px;
+            text-align: end;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 80px;
+            height: 50px;
+            border-radius: 15px;
+            text-transform: uppercase;
+            color: whitesmoke;
+        }
+        #reset {
+            background-color: black;
+        }
+        #plus {
+            background-color: green;
+        }
+        #minus {
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id="display">0</span>
+        <div class="buttons">
+            <button id="plus" onclick="increment()">+</button>
+            <button id="minus" onclick="decrement()">-</button>
+            <button id="reset" onclick="reset()">reset</button>
+        </div>
+    </div>
+    <script>
+        var n = 0;
+        const displayed = document.getElementById("display");
+        function increment(){
+            n++;
+            displayed.innerHTML = n;
+        }
+        function decrement(){
+            if(n != 0) {
+                n--;
+                displayed.innerHTML = n;
+            }
+        }
+        function reset() {
+            n = 0;
+            displayed.innerHTML = n;
+        }
+    </script>
+</body>
+</html>
